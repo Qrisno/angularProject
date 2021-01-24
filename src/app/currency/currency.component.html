@@ -1,0 +1,120 @@
+<div class="body">
+    <div class="container">
+        <select #selectval [(ngModel)]="option1" (ngModelChange)="shoot()">
+          <option value="CAD">CAD</option>
+          <option value="HKD">HKD</option>
+          <option value="ISK">ISK</option>
+          <option value="PHP">PHP</option>
+          <option value="DKK">DKK</option>
+          <option value="HUF">HUF</option>
+          <option value="CZK">CZK</option>
+          <option value="AUD">AUD</option>
+          <option value="RON">RON</option>
+          <option value="SEK">SEK</option>
+          <option value="IDR">IDR</option>
+          <option value="INR">INR</option>
+          <option value="BRL">BRL</option>
+          <option value="RUB">RUB</option>
+          <option value="HRK">HRK</option>
+          <option value="JPY">JPY</option>
+          <option value="THB">THB</option>
+          <option value="CHF">CHF</option>
+          <option value="SGD">SGD</option>
+          <option value="PLN">PLN</option>
+          <option value="BGN">BGN</option>
+          <option value="TRY">TRY</option>
+          <option value="CNY">CNY</option>
+          <option value="NOK">NOK</option>
+          <option value="NZD">NZD</option>
+          <option value="ZAR">ZAR</option>
+          <option value="USD">USD</option>
+          <option value="MXN">MXN</option>
+          <option value="ILS">ILS</option>
+          <option value="GBP">GBP</option>
+          <option value="KRW">KRW</option>
+          <option value="MYR">MYR</option>
+          <option value="EUR">EUR</option>
+        </select>
+        <input type="number" #inputone [(ngModel)]="firstValue" (input)="shoot()">
+        <button (click)='click(inputone.value, selectval.value, selectVal2.value)'>ADD</button>
+        <input [disabled]='dis()' type="number" [(ngModel)]="secondValue" (input)="shootBack()">
+        <select #selectVal2 [(ngModel)]="option2" (ngModelChange)="shootBack()">
+        <option value="CAD">CAD</option>
+        <option value="HKD">HKD</option>
+        <option value="ISK">ISK</option>
+        <option value="PHP">PHP</option>
+        <option value="DKK">DKK</option>
+        <option value="HUF">HUF</option>
+        <option value="CZK">CZK</option>
+        <option value="AUD">AUD</option>
+        <option value="RON">RON</option>
+        <option value="SEK">SEK</option>
+        <option value="IDR">IDR</option>
+        <option value="INR">INR</option>
+        <option value="BRL">BRL</option>
+        <option value="RUB">RUB</option>
+        <option value="HRK">HRK</option>
+        <option value="JPY">JPY</option>
+        <option value="THB">THB</option>
+        <option value="CHF">CHF</option>
+        <option value="SGD">SGD</option>
+        <option value="PLN">PLN</option>
+        <option value="BGN">BGN</option>
+        <option value="TRY">TRY</option>
+        <option value="CNY">CNY</option>
+        <option value="NOK">NOK</option>
+        <option value="NZD">NZD</option>
+        <option value="ZAR">ZAR</option>
+        <option value="USD">USD</option>
+        <option value="MXN">MXN</option>
+        <option value="ILS">ILS</option>
+        <option value="GBP">GBP</option>
+        <option value="KRW">KRW</option>
+        <option value="MYR">MYR</option>
+        <option value="EUR">EUR</option>
+      </select>
+    </div>
+    <div class="sumContainer">
+        <form formArrayName="currenciesArr" *ngFor="let arrayItem of currenciesArr.controls; let i=index">
+            <select #selectval (ngModelChange)="shoot()">
+                <option value="CAD">CAD</option>
+                <option value="HKD">HKD</option>
+                <option value="ISK">ISK</option>
+                <option value="PHP">PHP</option>
+                <option value="DKK">DKK</option>
+                <option value="HUF">HUF</option>
+                <option value="CZK">CZK</option>
+                <option value="AUD">AUD</option>
+                <option value="RON">RON</option>
+                <option value="SEK">SEK</option>
+                <option value="IDR">IDR</option>
+                <option value="INR">INR</option>
+                <option value="BRL">BRL</option>
+                <option value="RUB">RUB</option>
+                <option value="HRK">HRK</option>
+                <option value="JPY">JPY</option>
+                <option value="THB">THB</option>
+                <option value="CHF">CHF</option>
+                <option value="SGD">SGD</option>
+                <option value="PLN">PLN</option>
+                <option value="BGN">BGN</option>
+                <option value="TRY">TRY</option>
+                <option value="CNY">CNY</option>
+                <option value="NOK">NOK</option>
+                <option value="NZD">NZD</option>
+                <option value="ZAR">ZAR</option>
+                <option value="USD">USD</option>
+                <option value="MXN">MXN</option>
+                <option value="ILS">ILS</option>
+                <option value="GBP">GBP</option>
+                <option value="KRW">KRW</option>
+                <option value="MYR">MYR</option>
+                <option value="EUR">EUR</option>
+              </select>
+            <input type="number" #inputone (input)="shoot()">
+            <button (click)='click(inputone.value, selectval.value, selectVal2.value)'>GENERATE SUM</button>
+
+        </form>
+
+    </div>
+</div>
