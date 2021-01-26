@@ -1,0 +1,19 @@
+<form [formGroup]="form">
+    <div>
+        <label>Name
+            <input type="text" formControlName="name">
+        </label>
+    </div>
+    <div>
+        <label>
+                Salary
+                <input type="number" formControlName="salary">
+            </label>
+    </div>
+    <div>
+        <label>Age
+                <input type="number" formControlName="age">
+            </label>
+    </div>
+    <button (click)="add()">Create</button>
+</form>

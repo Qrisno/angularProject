@@ -1,9 +1,34 @@
 {
-    "posts": [{
-        "id": 1,
-        "title": "hello"
-    }],
-    "profile": {
-        "name": "typicode"
+  "employee": [
+    {
+      "name": "ვანო სხირტლაძე",
+      "salary": 450,
+      "age": 15,
+      "id": 2
+    },
+    {
+      "name": "გოგა ჭანტურია",
+      "salary": 789,
+      "age": 12,
+      "id": 3
+    },
+    {
+      "name": "ელლე",
+      "salary": 45,
+      "age": 45,
+      "id": 4
+    },
+    {
+      "name": "ქწექ",
+      "salary": 65,
+      "age": 56,
+      "id": 5
+    },
+    {
+      "name": "ქწქ",
+      "salary": 45,
+      "age": 45,
+      "id": 6
     }
+  ]
 }

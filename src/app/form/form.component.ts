@@ -14,7 +14,7 @@ import {
 })
 export class FormComponent implements OnInit {
   form!: FormGroup;
-  users:Array<object> = [];
+  users:Array<any> = [];
   editClick:boolean = false;
   num!: number;
   constructor(private fb:FormBuilder) {

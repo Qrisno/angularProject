@@ -6,18 +6,29 @@ import {AppComponent} from './app.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { CurrencyComponent } from './currency/currency.component';
 
+import { EmployeeRegisterComponent } from './http/employ-register/employ-register.component';
+import { EmployeeComponent } from './http/employ/employ.component';
+import { AllEmpsComponent } from './http/all-emps/all-emps.component';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     FormComponent,
-    CurrencyComponent
+    CurrencyComponent,
+    EmployeeRegisterComponent,
+    EmployeeComponent,
+    AllEmpsComponent
+ 
   ],
   imports: [
+    
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

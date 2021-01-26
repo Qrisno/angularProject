@@ -1,0 +1,42 @@
+<div [formGroup]="employee">
+    <div class="content">
+        <div class="id">
+            <label>
+                ID
+            <input type="number" formControlName="id">
+            </label>
+        </div>
+        <div class="update" *ngIf="checker">
+            <div>
+                <label>
+                    Name
+                <input type="text" formControlName="name">
+                </label>
+            </div>
+            <div>
+                <label>
+                    Salary
+                <input type="number" formControlName="salary">
+                </label>
+            </div>
+            <div>
+                <label>
+                    Age
+                <input type="number" formControlName="age">
+                </label>
+            </div>
+        </div>
+        <div class="info" *ngIf='info'>
+            <p>Name: {{name}}</p>
+            <p>Age: {{age}}</p>
+            <p>Salary: {{salary}}</p>
+        </div>
+        <div class="buttons">
+            <button (click)="getEmp()" *ngIf="!checker">Employee Details </button>
+            <button (click)="Updated()" *ngIf="!checker">Update Details</button>
+            <button (click)="hide()" *ngIf="checker">Close Update</button>
+            <button (click)="updateEmp()" *ngIf="checker">Save</button>
+            <button (click)="removeEmp()" *ngIf="!checker"> Delete </button>
+        </div>
+    </div>
+</div>
