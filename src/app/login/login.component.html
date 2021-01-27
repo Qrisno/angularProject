@@ -1,0 +1,18 @@
+<form id="form1" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <label>
+  E-mail:
+  <input class=".input" type="email" formControlName="email" />
+</label>
+    <div *ngIf='form.get("email").invalid && form.get("email").touched'>
+        <div class="texts" *ngIf='form.get("email").errors.required'>EMAIL FIELD MUST NOT BE EMPTY</div>
+        <div class="texts" *ngIf='form.get("email").errors.email'>EMAIL MUST FOLLOW PATTERN</div>
+    </div>
+    <label>
+    Password:
+    <input class=".input" type="password" formControlName="password" />
+  </label>
+    <div *ngIf='form.get("password").invalid && form.get("password").touched'>
+        <div class="texts" *ngIf='form.get("password").errors.required'>PASSWORD FIELD MUST NOT BE EMPTY</div>
+    </div>
+    <button type="submit">Login</button>
+</form>

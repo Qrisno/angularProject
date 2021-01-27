@@ -9,7 +9,13 @@ import { CurrencyComponent } from './currency/currency.component';
 import { EmployeeRegisterComponent } from './http/employ-register/employ-register.component';
 import { EmployeeComponent } from './http/employ/employ.component';
 import { AllEmpsComponent } from './http/all-emps/all-emps.component';
-
+import { LoginComponent } from './login/login.component';
+import { RouterModule } from '@angular/router';
+import { NavbarComponent } from './navbar/navbar.component'
+import { routes } from './routes';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { UsersComponent } from './users/users.component';
+import { AuthGuard } from './auth-guard.service';
 
 
 @NgModule({
@@ -19,18 +25,25 @@ import { AllEmpsComponent } from './http/all-emps/all-emps.component';
     CurrencyComponent,
     EmployeeRegisterComponent,
     EmployeeComponent,
-    AllEmpsComponent
+    AllEmpsComponent,
+    LoginComponent,
+    NavbarComponent,
+    WelcomeComponent,
+    UsersComponent
  
   ],
   imports: [
-    
+  
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    RouterModule.forRoot(routes),
     
   ],
-  providers: [],
+  providers: [
+    AuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

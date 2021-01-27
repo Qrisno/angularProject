@@ -1,0 +1,88 @@
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>E-mail</th>
+        <th>Phone Number</th>
+        <th>Website</th>
+        <th>Password</th>
+        <th></th>
+    </tr>
+    <tr *ngFor="let emp of empList; let i=index">
+        <td>{{emp.id}}</td>
+        <td>{{emp.nickname}}</td>
+        <td>{{emp.email}}</td>
+        <td>{{emp.phoneNum}}</td>
+        <td>{{emp.web}}</td>
+        <td>{{emp.passGroup.password}}</td>
+        <td>
+            <button [disabled]='checkUser(i)' (click)='edit(i)'>Edit</button>
+            <button [disabled]='checkUser(i)' (click)='delete(i)'>Delete</button>
+        </td>
+    </tr>
+</table>
+<form *ngIf='editClick' id="form1" [formGroup]="form">
+    <label>
+        ID:
+        <input class=".input" type="number" formControlName="id" /></label>
+    <label>
+  E-mail:
+  <input class=".input" type="email" formControlName="email" />
+</label>
+    <div *ngIf='form.get("email").invalid && form.get("email").touched'>
+        <div class="texts" *ngIf='form.get("email").errors.required'>EMAIL FIELD MUST NOT BE EMPTY</div>
+        <div class="texts" *ngIf='form.get("email").errors.email'>EMAIL MUST FOLLOW PATTERN</div>
+    </div>
+    <div formGroupName="passGroup">
+        <label>
+    Password:
+    <input class=".input" type="password" formControlName="password" />
+  </label>
+        <div *ngIf='form.get("passGroup").get("password").invalid && form.get("passGroup").get("password").touched'>
+            <div class="texts" *ngIf='form.get("passGroup").get("password").errors.required'>PASSWORD FIELD MUST NOT BE EMPTY</div>
+            <div class="texts" *ngIf='form.get("passGroup").get("password").errors.minlength'>PASSWORD MUST BE MORE THAN 8 CHARACTERS</div>
+            <div class="texts" *ngIf='form.get("passGroup").get("confPassword").errors.pattern'>PASSWORDS FIELD MUST FOLLOW PATTERN</div>
+        </div>
+        <label>
+    Confirm Password:
+    <input class=".input" type="password" formControlName="confPassword" />
+  </label>
+        <div *ngIf='form.get("passGroup").get("confPassword").invalid && form.get("passGroup").get("confPassword").touched'>
+            <div class="texts" *ngIf='form.get("passGroup").get("confPassword").errors.required'>CONFIRM PASSWORD FIELD MUST NOT BE EMPTY</div>
+
+        </div>
+    </div>
+    <label>
+  Nickname:
+  <input class=".input" type="text" formControlName="nickname" />
+</label>
+    <div *ngIf='form.get("nickname").invalid && form.get("nickname").touched'>
+        <div class="texts" *ngIf='form.get("nickname").errors.required'>NICKNAME FIELD MUST NOT BE EMPTY</div>
+        <div class="texts" *ngIf='form.get("nickname").errors.pattern'>NICKNAME FIELD MUST FOLLOW PATTERN</div>
+    </div>
+    <label>
+  Phone Number:
+  <input class=".input" type="tel" formControlName="phoneNum" />
+</label>
+    <div *ngIf='form.get("phoneNum").invalid && form.get("phoneNum").touched'>
+        <div class="texts" *ngIf='form.get("phoneNum").errors.required'>NUMBER FIELD MUST NOT BE EMPTY</div>
+        <div class="texts" *ngIf='form.get("phoneNum").errors.pattern'>NUMBER FIELD MUST FOLLOW PATTERN</div>
+    </div>
+    <label>
+  Website:
+  <input class=".input" type="url" formControlName="web" />
+</label>
+    <div *ngIf='form.get("web").invalid && form.get("web").touched'>
+        <div class="texts" *ngIf='form.get("web").errors.required'>WEBSITE FIELD MUST NOT BE EMPTY</div>
+        <div class="texts" *ngIf='form.get("web").errors.pattern'>WEBSITE FIELD MUST FOLLOW PATTERN</div>
+    </div>
+    <label>
+        <input type="checkbox" formControlName="terms" />Accept Terms & Conditions
+
+</label>
+    <div class="buttons">
+        <button class="button" (click)='submit()'>SUBMIT</button>
+        <button class="button" (click)='cancel()'>Cancel</button>
+    </div>
+
+</form>

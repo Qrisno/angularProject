@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Output } from "@angular/core";
 import {
   FormBuilder,
   FormControl,
@@ -6,6 +6,7 @@ import {
   ValidationErrors,
   Validators
 } from "@angular/forms";
+import { EmployeeService } from "../employee-service.service";
 
 @Component({
   selector: "app-form",
@@ -13,11 +14,12 @@ import {
   styleUrls: ["./form.component.scss"]
 })
 export class FormComponent implements OnInit {
+  
   form!: FormGroup;
   users:Array<any> = [];
   editClick:boolean = false;
   num!: number;
-  constructor(private fb:FormBuilder) {
+  constructor(private fb:FormBuilder, private server: EmployeeService) {
   }
   
   onSubmit() {
@@ -27,6 +29,8 @@ export class FormComponent implements OnInit {
         this.users.splice(this.num, 1, this.form.value);
       } else {
         this.users.push(this.form.value);
+        this.server.create(this.form.getRawValue());
+        
       }
     }
     this.form.reset();
