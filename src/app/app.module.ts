@@ -1,5 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import {NgModule} from '@angular/core';
 import {FormComponent} from './form/form.component';
 import {AppComponent} from './app.component';
@@ -16,7 +16,8 @@ import { routes } from './routes';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { UsersComponent } from './users/users.component';
 import { AuthGuard } from './auth-guard.service';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { InterceptorService } from './loader/interceptor.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import { AuthGuard } from './auth-guard.service';
  
   ],
   imports: [
-  
+    BrowserAnimationsModule,
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
@@ -42,7 +43,8 @@ import { AuthGuard } from './auth-guard.service';
     
   ],
   providers: [
-    AuthGuard
+    AuthGuard,
+    {provide:HTTP_INTERCEPTORS, useClass:InterceptorService, multi:true},
   ],
   bootstrap: [AppComponent]
 })

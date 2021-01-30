@@ -7,6 +7,7 @@ import { EmployeeService } from 'src/app/employee-service.service';
   selector: 'app-employee-register',
   templateUrl: './employ-register.component.html',
   styleUrls: ['./employ-register.component.scss'],
+ 
 })
 export class EmployeeRegisterComponent implements OnInit {
   form!: FormGroup;
@@ -24,7 +25,9 @@ export class EmployeeRegisterComponent implements OnInit {
   }
 
   add(){
+    
     this.EmpService.create(this.form.getRawValue());
     this.form.reset();
+    
   }
 }

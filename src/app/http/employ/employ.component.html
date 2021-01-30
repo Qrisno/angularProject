@@ -6,6 +6,7 @@
             <input type="number" formControlName="id">
             </label>
         </div>
+
         <div class="update" *ngIf="checker">
             <div>
                 <label>
@@ -26,6 +27,7 @@
                 </label>
             </div>
         </div>
+
         <div class="info" *ngIf='info'>
             <p>Name: {{name}}</p>
             <p>Age: {{age}}</p>
@@ -39,4 +41,13 @@
             <button (click)="removeEmp()" *ngIf="!checker"> Delete </button>
         </div>
     </div>
+</div>
+
+<div [@delete]='dePop' class="popup">
+    <p>Are you sure?</p>
+    <div class="match">
+        <button (click)='yes()'>Yes</button>
+        <button (click)='no()'>No</button>
+    </div>
+
 </div>

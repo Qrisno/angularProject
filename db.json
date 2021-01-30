@@ -1,10 +1,10 @@
 {
   "employee": [
     {
+      "id": 2,
       "name": "ვანო სხირტლაძე",
-      "salary": 450,
-      "age": 15,
-      "id": 2
+      "salary": 472,
+      "age": 20
     },
     {
       "name": "გოგა ჭანტურია",
@@ -13,22 +13,88 @@
       "id": 3
     },
     {
-      "name": "ელლე",
-      "salary": 45,
-      "age": 45,
-      "id": 4
+      "name": "nodar meladze",
+      "salary": 1,
+      "age": 2,
+      "id": 24
     },
     {
-      "name": "ქწექ",
-      "salary": 65,
+      "name": "k",
+      "salary": 1,
+      "age": 1,
+      "id": 28
+    },
+    {
+      "name": "ჯასკდჯ",
+      "salary": 45,
+      "age": 454,
+      "id": 29
+    },
+    {
+      "name": "ქქ",
+      "salary": 11,
+      "age": 111,
+      "id": 30
+    },
+    {
+      "name": "kkk",
+      "salary": 12,
+      "age": 456,
+      "id": 31
+    },
+    {
+      "name": "ნინო ",
+      "salary": 45,
+      "age": 54,
+      "id": 32
+    },
+    {
+      "name": "kaxa",
+      "salary": 789798,
+      "age": 7897,
+      "id": 33
+    },
+    {
+      "name": "kaka",
+      "salary": 656,
       "age": 56,
-      "id": 5
+      "id": 34
     },
     {
-      "name": "ქწქ",
-      "salary": 45,
+      "name": "nino",
+      "salary": 5454,
+      "age": 454,
+      "id": 35
+    },
+    {
+      "name": "თაკო",
+      "salary": 87897,
+      "age": 787,
+      "id": 36
+    },
+    {
+      "name": "nino",
+      "salary": "",
+      "age": "",
+      "id": 37
+    },
+    {
+      "name": null,
+      "salary": 4,
+      "age": null,
+      "id": 38
+    },
+    {
+      "name": "კაკო",
+      "salary": 87987,
+      "age": 44,
+      "id": 39
+    },
+    {
+      "name": "მაკა გამსახურდია",
+      "salary": 45454,
       "age": 45,
-      "id": 6
+      "id": 40
     }
   ]
 }

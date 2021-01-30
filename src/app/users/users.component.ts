@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { map } from 'rxjs/operators';
 import { EmployeeService } from '../employee-service.service';
 
@@ -38,7 +38,7 @@ export class UsersComponent implements OnInit {
           ])
         },
         {
-          validators: this.checkPass,
+          validators: <ValidatorFn>this.checkPass,
         }
       ),
       nickname: new FormControl("", [
@@ -73,8 +73,8 @@ export class UsersComponent implements OnInit {
     )
     .subscribe()
   }
-  checkPass(fGroup: FormGroup): ValidationErrors {
-    if (fGroup.get("password").value !== fGroup.get("confPassword").value) {
+  checkPass(fGroup: FormGroup): ValidationErrors|null {
+    if (fGroup.get("password")?.value !== fGroup.get("confPassword")?.value) {
       return {'call': true};
     }else{
       return null;
@@ -112,8 +112,6 @@ export class UsersComponent implements OnInit {
     let valid = confirm(`This action will remove an user with the email:${this.empList[i].email}, Are u sure?`);
     if(valid){
       console.log(this.empList);
-      
-    
       this.http.delete(this.empList[i].id).subscribe();
       
     }

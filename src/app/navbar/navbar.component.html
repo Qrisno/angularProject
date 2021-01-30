@@ -8,3 +8,5 @@
     <li *ngIf='log' style="float:right"><a routerLinkActive='active' routerLink='login' (click)='logOut()'>LogOut</a></li>
     <li *ngIf='log' style="float:right"><a routerLinkActive='active' routerLink='users'>Users</a></li>
 </ul>
+
+<div [hidden]='loaderService.isLoaded | async' class="load" [@loader]="cool"></div>

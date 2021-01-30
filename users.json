@@ -1,40 +1,16 @@
 {
   "employee": [
     {
-      "email": "niniko@gmail.com",
-      "passGroup": {
-        "password": "ninia123",
-        "confPassword": "ninia123"
-      },
-      "nickname": "niniaaaa7879887",
-      "phoneNum": "+380123456789",
-      "web": "aka.ge",
-      "terms": true,
-      "id": 2
-    },
-    {
+      "id": 4,
       "email": "ninia@mail.ru",
       "passGroup": {
         "password": "ninia123",
         "confPassword": "ninia123"
       },
-      "nickname": "niniko2222",
+      "nickname": "niniko221",
       "phoneNum": "+380123456789",
       "web": "asd.ge",
-      "terms": true,
-      "id": 4
-    },
-    {
-      "email": "nini@gmail.com",
-      "passGroup": {
-        "password": "ninia123",
-        "confPassword": "ninia123"
-      },
-      "nickname": "ninikooooooooooo",
-      "phoneNum": "+380123456789",
-      "web": "ninini.ge",
-      "terms": true,
-      "id": 5
+      "terms": true
     }
   ]
 }

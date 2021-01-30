@@ -4,6 +4,7 @@ import {
   FormControl,
   FormGroup,
   ValidationErrors,
+  ValidatorFn,
   Validators
 } from "@angular/forms";
 import { EmployeeService } from "../employee-service.service";
@@ -54,7 +55,7 @@ export class FormComponent implements OnInit {
           ])
         },
         {
-          validators: this.checkPass,
+          validators:<ValidatorFn> this.checkPass,
         }
       ),
       nickname: new FormControl("", [
@@ -78,8 +79,8 @@ export class FormComponent implements OnInit {
       ]),
     });
   }
-  checkPass(fGroup: FormGroup): ValidationErrors {
-    if (fGroup.get("password").value !== fGroup.get("confPassword").value) {
+  checkPass(fGroup: FormGroup): ValidationErrors|null {
+    if (fGroup.get("password")?.value !== fGroup.get("confPassword")?.value) {
       return {'call': true};
     }else{
       return null;
