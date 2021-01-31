@@ -16,7 +16,7 @@ export class InterceptorService implements HttpInterceptor {
   }
   handler(next:any,request:any){
     return next.handle(request).pipe(
-      delay(2000),
+     
       tap(
         (event)=>{
           if(event instanceof HttpRequest){
